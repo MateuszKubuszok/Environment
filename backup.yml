@@ -1,0 +1,9 @@
+---
+- hosts:         localhost
+  remote_user:   root
+  become:        yes
+  become_method: sudo
+  tasks:
+  - name:    Install terminal apps
+    include: backup_terminal_settings.yml
+
