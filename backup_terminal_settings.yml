@@ -1,0 +1,20 @@
+---
+- name: Backup .ammonite
+  copy: src="/home/{{ user }}/.ammonite" dest="{{ playbook_dir }}/terminal_settings/ammonite"
+- name: Backup .bashrc
+  copy: src="/home/{{ user }}/.bashrc" dest="{{ playbook_dir }}/terminal_settings/bashrc"
+- name: Backup .gitconfig
+  copy: src="/home/{{ user }}/.gitconfig" dest="{{ playbook_dir }}/terminal_settings/gitconfig"
+- name: Backup .sbt
+  copy: src="/home/{{ user }}/.sbt" dest="{{ playbook_dir }}/terminal_settings/sbt"
+- name: Backup .spacemacs
+  copy: src="/home/{{ user }}/.spacemacs" dest="{{ playbook_dir }}/terminal_settings/spacemacs"
+- name: Backup .tmux.conf
+  copy: src="/home/{{ user }}/.tmux.conf" dest="{{ playbook_dir }}/terminal_settings/tmux.conf"
+- name: Backup .vim
+  copy: src="/home/{{ user }}/.vim" dest="{{ playbook_dir }}/terminal_settings/vim"
+- copy: src="/home/{{ user }}/.vimrc" dest="{{ playbook_dir }}/terminal_settings/vimrc"
+- name: Backup .zprofile
+  copy: src="/home/{{ user }}/.zprofile" dest="{{ playbook_dir }}/terminal_settings/zprofile"
+- name: Backup .zshrc
+  copy: src="/home/{{ user }}/.zshrc" dest="{{ playbook_dir }}/terminal_settings/zshrc"

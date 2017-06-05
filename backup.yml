@@ -6,4 +6,3 @@
   tasks:
   - name:    Install terminal apps
     include: backup_terminal_settings.yml
-

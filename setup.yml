@@ -6,6 +6,7 @@
   tasks:
   - name:    Install terminal apps
     include: terminal_{{ dist }}.yml
+  - name:    Restore terminal apps settings
+    include: restore_terminal_settings.yml
   - name:    Install GUI apps and vitamins
     include: gui_apps_{{ dist }}.yml
-

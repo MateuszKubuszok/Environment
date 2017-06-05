@@ -5,4 +5,3 @@ if which pacman > /dev/null 2>&1; then
   mkdir ~/aur > /dev/null 2>&1
   ansible-playbook setup.yml --ask-sudo-pass --extra-vars "user=$USER dist=arch"
 fi
-

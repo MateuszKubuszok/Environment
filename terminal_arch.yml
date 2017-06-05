@@ -31,4 +31,3 @@
   pacman: state=present     name=vim
 - name:   Ensure zsh installed
   pacman: state=present     name=zsh
-
