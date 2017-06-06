@@ -1,11 +1,16 @@
 ---
 - hosts: localhost
   tasks:
+  - name:          Install services
+    remote_user:   root
+    become:        yes
+    become_method: sudo
+    include:       tasks/{{ dist }}/services.yml
   - name:          Install terminal apps
     remote_user:   root
     become:        yes
     become_method: sudo
-    include:       tasks/terminal_{{ dist }}.yml
+    include:       tasks/{{ dist }}/terminal_apps.yml
   - name:          Restore terminal apps settings
     include:       tasks/restore_terminal_settings.yml
   - name:          Restore ~ directory
@@ -14,4 +19,4 @@
     remote_user:   root
     become:        yes
     become_method: sudo
-    include:       tasks/gui_apps_{{ dist }}.yml
+    include:       tasks/{{ dist }}/gui_apps.yml

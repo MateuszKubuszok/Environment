@@ -1,0 +1,7 @@
+---
+- name: Ensure PostgreSQL installed
+  pacman: state=present     name=postgresql
+- shell: "chown -R postgres:postgres /var/lib/postgres/"
+- command: su - postgres -c "initdb --locale en_US.UTF-8 -D '/var/lib/postgres/data'" creates="/var/lib/postgres/data"
+- name: Ensure PostgreSQL is running
+  service: state=started    name=postgresql enabled=yes
