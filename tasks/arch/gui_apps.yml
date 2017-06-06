@@ -26,8 +26,10 @@
   aur:    user="{{ user }}" name=nylas-mail-bin
 - name:   Ensure Paper theme installed
   aur:    user="{{ user }}" name=paper-gtk-theme-git
+- name:   Ensure PgAdmin3 installed
+  pacman: state=present     name=pgadmin3
 - aur:    user="{{ user }}" name=paper-icon-theme-git
-- name:   Ensure Franz installed
+- name:   Ensure Spotify installed
   aur:    user="{{ user }}" name=spotify
 - aur:    user="{{ user }}" name=ffmpeg0.10
 - aur:    user="{{ user }}" name=zenity
