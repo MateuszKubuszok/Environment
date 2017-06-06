@@ -3,5 +3,5 @@ echo "Setup current system"
 if which pacman > /dev/null 2>&1; then
   echo "as Arch Linux with $USER user"
   mkdir ~/aur > /dev/null 2>&1
-  ansible-playbook setup.yml --ask-sudo-pass --extra-vars "user=$USER dist=arch"
+  ansible-playbook setup.yml --ask-sudo-pass --extra-vars "user=$USER dist=arch" "$@"
 fi

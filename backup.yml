@@ -3,5 +3,7 @@
   tasks:
   - name:    Backup terminal apps settings
     include: tasks/backup_terminal_settings.yml
+    tags:    terminal-settings
   - name:    Backup ~ directory
     include: tasks/backup_home.yml
+    tags:    home

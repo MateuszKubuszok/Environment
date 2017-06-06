@@ -6,17 +6,22 @@
     become:        yes
     become_method: sudo
     include:       tasks/{{ dist }}/services.yml
+    tags:          services
   - name:          Install terminal apps
     remote_user:   root
     become:        yes
     become_method: sudo
     include:       tasks/{{ dist }}/terminal_apps.yml
+    tags:          terminal-apps
   - name:          Restore terminal apps settings
     include:       tasks/restore_terminal_settings.yml
+    tags:          terminal-settings
   - name:          Restore ~ directory
     include:       tasks/restore_home.yml
+    tags:          home
   - name:          Install GUI apps and vitamins
     remote_user:   root
     become:        yes
     become_method: sudo
     include:       tasks/{{ dist }}/gui_apps.yml
+    tags:          gui-apps
