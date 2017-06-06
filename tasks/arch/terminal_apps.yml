@@ -1,6 +1,6 @@
 ---
 - name:   Ensure amm installed
-  copy:   src="{{ playbook_dir }}/scripts/amm" dest="/usr/local/bin/amm" mode="555"
+  aur:    user="{{ user }}" name=ammonite
 - name:   Ensure CLOC installed
   pacman: state=present     name=cloc
 - name:   Ensure Docker installed
@@ -18,6 +18,9 @@
 - name:   Ensure JDK8 installed
   pacman: state=present     name=jdk8-openjdk
 - shell:  "archlinux-java set java-8-openjdk"
+- name:   Ensure matterhorn installed
+  aur:    user="{{ user }}" name=libtinfo
+- aur:    user="{{ user }}" name=matterhorn
 - name:   Ensure midnight commander installed
   pacman: state=present     name=mc
 - name:   Ensure micro installed

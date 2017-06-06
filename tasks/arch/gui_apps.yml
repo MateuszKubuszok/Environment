@@ -12,6 +12,8 @@
 - name:   Ensure Dropbox installed
   pacman: state=present     name=dropbox
 - aur:    user="{{ user }}" name=nautilus-dropbox
+- name:   Ensure Double Commander installed
+  pacman: state=present     name=doublecmd-gtk2
 - name:   Ensure Franz installed
   aur:    user="{{ user }}" name=franz-bin
 - name:   Ensure Fira Code installed
