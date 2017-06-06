@@ -22,6 +22,9 @@
   aur:    user="{{ user }}" name=hyper
 - name:   Ensure IntelliJ Idea CE installed
   pacman: state=present     name=intellij-idea-community-edition
+- name:   Ensure KeePass installed
+  pacman: state=present     name=keepass
+- aur:    user="{{ user }}" name=keepass-plugin-http
 - name:   Ensure Nylas Mail installed
   aur:    user="{{ user }}" name=nylas-mail-bin
 - name:   Ensure Paper theme installed
