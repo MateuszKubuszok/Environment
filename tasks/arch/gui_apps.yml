@@ -1,8 +1,8 @@
 ---
 - name:   Ensure Android Studio installed
   aur:    user="{{ user }}" name=android-studio
-# - name:   Ensure Chrome installed
-#   aur:    user="{{ user }}" name=google-chrome
+- name:   Ensure Chrome installed
+  aur:    user="{{ user }}" name=google-chrome
 - pacman: state=present     name=chrome-gnome-shell
 - name:   Ensure Clementine installed
   pacman: state=present     name=clementine
