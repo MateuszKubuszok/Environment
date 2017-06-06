@@ -1,0 +1,40 @@
+---
+- name: Restore home directory
+  synchronize:
+    src:       "{{ playbook_dir }}/home_backup/{{ user }}/"
+    dest:      "/home/{{ user }}"
+    recursive: yes
+    rsync_opts:
+      - "--exclude=Documents"
+      - "--exclude=Dropbox"
+      - "--exclude=Movies"
+      - "--exclude=Music"
+      - "--exclude=Pictures"
+      - "--exclude=Workspaces"
+      - "--exclude=.ammonite"
+      - "--exclude=.ansible"
+      - "--exclude=.bashrc"
+      - "--exclude=.emacs.d"
+      - "--exclude=.gitconfig"
+      - "--exclude=.oh-my-zsh"
+      - "--exclude=.sbt"
+      - "--exclude=.spacemacs"
+      - "--exclude=.tmux"
+      - "--exclude=.tmux.conf"
+      - "--exclude=.vim"
+      - "--exclude=.vimrc"
+      - "--exclude=.z"
+      - "--exclude=.zshrc"
+      - "--exclude=.zsh-syntax-highlighting"
+      - "--exclude=.local/share/Zeal"
+      - "--ignore-missing-args"
+- name: Set symlinks to mouned file systems
+  file: src="/mnt/Workspaces"                    dest="/home/{{ user }}/Workspaces" state=link force=yes
+- file: src="/mnt/Music"                         dest="/home/{{ user }}/Music"      state=link force=yes
+- file: src="/mnt/Data"                          dest="/home/{{ user }}/Data"       state=link force=yes
+- name: Set symlinks for Data subfolders
+  file: src="/home/{{ user }}/Data/Downloads"    dest="/home/{{ user }}/Downloads"  state=link force=yes
+- file: src="/home/{{ user }}/Data/Dropbox"      dest="/home/{{ user }}/Dropbox"    state=link force=yes
+- file: src="/home/{{ user }}/Dropbox/Documents" dest="/home/{{ user }}/Documents"  state=link force=yes
+- file: src="/home/{{ user }}/Dropbox/Photos"    dest="/home/{{ user }}/Pictures"   state=link force=yes
+- file: src="/home/{{ user }}/Data/Movies"       dest="/home/{{ user }}/Movies"     state=link force=yes

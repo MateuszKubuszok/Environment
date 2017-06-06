@@ -1,12 +1,17 @@
 ---
-- hosts:         localhost
-  remote_user:   root
-  become:        yes
-  become_method: sudo
+- hosts: localhost
   tasks:
-  - name:    Install terminal apps
-    include: terminal_{{ dist }}.yml
-  - name:    Restore terminal apps settings
-    include: restore_terminal_settings.yml
-  - name:    Install GUI apps and vitamins
-    include: gui_apps_{{ dist }}.yml
+  - name:          Install terminal apps
+    remote_user:   root
+    become:        yes
+    become_method: sudo
+    include:       tasks/terminal_{{ dist }}.yml
+  - name:          Restore terminal apps settings
+    include:       tasks/restore_terminal_settings.yml
+  - name:          Restore ~ directory
+    include:       tasks/restore_home.yml
+  - name:          Install GUI apps and vitamins
+    remote_user:   root
+    become:        yes
+    become_method: sudo
+    include:       tasks/gui_apps_{{ dist }}.yml

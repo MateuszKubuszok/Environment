@@ -2,5 +2,5 @@
 echo "Backup current system"
 if which pacman > /dev/null 2>&1; then
   echo "as Arch Linux with $USER user"
-  ansible-playbook backup.yml --ask-sudo-pass --extra-vars "user=$USER dist=arch"
+  ansible-playbook backup.yml --extra-vars "user=$USER dist=arch"
 fi

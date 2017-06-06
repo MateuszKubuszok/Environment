@@ -1,0 +1,31 @@
+---
+- name: Backup home directory
+  synchronize:
+    src:       "/home/{{ user }}/"
+    dest:      "{{ playbook_dir }}/home_backup/{{ user }}"
+    recursive: yes
+    rsync_opts:
+      - "--exclude=Documents"
+      - "--exclude=Dropbox"
+      - "--exclude=Movies"
+      - "--exclude=Music"
+      - "--exclude=Pictures"
+      - "--exclude=Jobspace"
+      - "--exclude=Workspaces"
+      - "--exclude=.ammonite"
+      - "--exclude=.ansible"
+      - "--exclude=.bashrc"
+      - "--exclude=.emacs.d"
+      - "--exclude=.gitconfig"
+      - "--exclude=.oh-my-zsh"
+      - "--exclude=.sbt"
+      - "--exclude=.spacemacs"
+      - "--exclude=.tmux"
+      - "--exclude=.tmux.conf"
+      - "--exclude=.vim"
+      - "--exclude=.vimrc"
+      - "--exclude=.z"
+      - "--exclude=.zshrc"
+      - "--exclude=.zsh-syntax-highlighting"
+      - "--exclude=.local/share/Zeal"
+      - "--ignore-missing-args"

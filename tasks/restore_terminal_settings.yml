@@ -1,0 +1,29 @@
+---
+- name: Restore .ammonite
+  copy: src="{{ playbook_dir }}/terminal_settings/ammonite/predef.sc" dest="/home/{{ user }}/.ammonite/predef.sc" owner="{{ user }}" group=users
+- name: Restore .bashrc
+  copy: src="{{ playbook_dir }}/terminal_settings/bashrc" dest="/home/{{ user }}/.bashrc" owner="{{ user }}" group=users
+- name: Restore .gitconfig
+  copy: src="{{ playbook_dir }}/terminal_settings/gitconfig" dest="/home/{{ user }}/.gitconfig" owner="{{ user }}" group=users
+- name: Restore .oh-my-zsh
+  git:  repo=https://github.com/robbyrussell/oh-my-zsh.git dest="/home/{{ user }}/.oh-my-zsh"
+- name: Restore .sbt
+  copy: src="{{ playbook_dir }}/terminal_settings/sbt" dest="/home/{{ user }}/.sbt" owner="{{ user }}" group=users
+- name: Restore .spacemacs
+  copy: src="{{ playbook_dir }}/terminal_settings/spacemacs" dest="/home/{{ user }}/.spacemacs" owner="{{ user }}" group=users
+- git:  repo=https://github.com/syl20bnr/spacemacs.git dest="/home/{{ user }}/.emacs.d"
+- name: Restore .tmux.conf
+  copy: src="{{ playbook_dir }}/terminal_settings/tmux.conf" dest="/home/{{ user }}/.tmux.conf" owner="{{ user }}" group=users
+- git:  repo=https://github.com/tmux-plugins/tpm.git dest="/home/{{ user }}/.tmux/plugins/tpm"
+- name: Restore .vim
+  copy: src="{{ playbook_dir }}/terminal_settings/vim/" dest="/home/{{ user }}/.vim" owner="{{ user }}" group=users
+- copy: src="{{ playbook_dir }}/terminal_settings/vimrc" dest="/home/{{ user }}/.vimrc" owner="{{ user }}" group=users
+- name: Restore .zprofile
+  copy: src="{{ playbook_dir }}/terminal_settings/zprofile" dest="/home/{{ user }}/.zprofile" owner="{{ user }}" group=users
+- name: Restore .zshrc
+  copy: src="{{ playbook_dir }}/terminal_settings/zshrc" dest="/home/{{ user }}/.zshrc" owner="{{ user }}" group=users
+- git:  repo=https://github.com/rupa/z.git dest="/home/{{ user }}/.z"
+- git:  repo=https://github.com/zsh-users/zsh-syntax-highlighting.git dest="/home/{{ user }}/.zsh-syntax-highlighting"
+- user: name="{{ user }}" shell=/usr/bin/zsh
+  become:        yes
+  become_method: sudo

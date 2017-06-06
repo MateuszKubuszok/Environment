@@ -1,0 +1,37 @@
+---
+- name:   Ensure amm installed
+  copy:   src="{{ playbook_dir }}/scripts/amm" dest="/usr/local/bin/amm" mode="555"
+- name:   Ensure CLOC installed
+  pacman: state=present     name=cloc
+- name:   Ensure Docker installed
+  pacman: state=present     name=docker
+- pacman: state=present     name=docker-compose
+- pacman: state=present     name=docker-machine
+- name:   Ensure Emacs installed
+  pacman: state=present     name=emacs
+- name:   Ensure Git installed
+  pacman: state=present     name=git
+- name:   Ensure Gradle installed
+  pacman: state=present     name=gradle
+- name:   Ensure htop installed
+  pacman: state=present     name=htop
+- name:   Ensure JDK8 installed
+  pacman: state=present     name=jre8-openjdk
+- name:   Ensure midnight commander installed
+  pacman: state=present     name=mc
+- name:   Ensure micro installed
+  aur:    user="{{ user }}" name=micro
+- name:   Ensure neovim installed
+  pacman: state=present     name=neovim
+- name:   Ensure SBT installed
+  pacman: state=present     name=sbt
+- name:   Ensure RVM installed
+  shell:  "{{ playbook_dir }}/scripts/rvm-installer.sh"
+- name:   Ensure stack installed
+  pacman: state=present     name=stack
+- name:   Ensure tmux installed
+  pacman: state=present     name=tmux
+- name:   Ensure Vim installed
+  pacman: state=present     name=vim
+- name:   Ensure zsh installed
+  pacman: state=present     name=zsh
