@@ -1,6 +1,16 @@
 ---
+- name:   Ensure Alacarte installed
+  pacman: state=present     name=alacarte
+- name:   Ensure Alacritty installed
+  aur:    user="{{ user }}" name=alacritty-git
 - name:   Ensure Android Studio installed
   aur:    user="{{ user }}" name=android-studio
+- name:   Ensure Aptana Studio installed
+  aur:    user="{{ user }}" name=aptana-studio
+- name:   Ensure Aspell PL dict installed installed
+  pacman: state=present     name=aspell-pl
+- name:   Ensure Arc theme installed
+  aur:    user="{{ user }}" name=gtk-theme-arc-git
 - name:   Ensure Chrome installed
   aur:    user="{{ user }}" name=google-chrome
 - pacman: state=present     name=chrome-gnome-shell
@@ -14,14 +24,28 @@
 - aur:    user="{{ user }}" name=nautilus-dropbox
 - name:   Ensure Double Commander installed
   pacman: state=present     name=doublecmd-gtk2
+- name:   Ensure fonts installed
+  pacman: state=present     name=ttf-freefont
+- pacman: state=present     name=ttf-arphic-uming
+- pacman: state=present     name=ttf-baekmuk
 - name:   Ensure Franz installed
   aur:    user="{{ user }}" name=franz-bin
 - name:   Ensure Fira Code installed
   aur:    user="{{ user }}" name=fira-code-git
 - name:   Ensure Firefox installed
   pacman: state=present     name=firefox
+- name:   Ensure Gimp installed
+  pacman: state=present     name=gimp
+- name:   Ensure Gitkraken installed
+  pacman: state=present     name=gitkraken
+- name:   Ensure Gnome Control Account installed
+  pacman: state=present     name=gimp
+- name:   Ensure Hunspell PL dict installed installed
+  pacman: state=present     name=hunspell-pl
 - name:   Ensure Hyper installed
   aur:    user="{{ user }}" name=hyper
+- name:   Ensure Inkscape installed
+  pacman: state=present     name=inkscape
 - name:   Ensure IntelliJ Idea CE installed
   pacman: state=present     name=intellij-idea-community-edition
 - name:   Ensure KeePass installed
@@ -31,9 +55,11 @@
   aur:    user="{{ user }}" name=nylas-mail-bin
 - name:   Ensure Paper theme installed
   aur:    user="{{ user }}" name=paper-gtk-theme-git
+- aur:    user="{{ user }}" name=paper-icon-theme-git
+- name:   Ensure Pencil installed
+  aur:    user="{{ user }}" name=pencil
 - name:   Ensure PgAdmin3 installed
   pacman: state=present     name=pgadmin3
-- aur:    user="{{ user }}" name=paper-icon-theme-git
 - name:   Ensure Spotify installed
   aur:    user="{{ user }}" name=spotify
 - aur:    user="{{ user }}" name=ffmpeg0.10
@@ -44,3 +70,7 @@
   aur:    user="{{ user }}" name=sublime-text-nightly
 - name:   Ensure Thunderbird installed
   pacman: state=present     name=thunderbird
+- name:   Ensure xarchiver installed
+  pacman: state=present     name=xarchiver
+- name:   Ensure xeros drivers installed
+  aur:    user="{{ user }}" name=xerox-workcentre-78xx

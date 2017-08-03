@@ -1,6 +1,8 @@
 ---
 - name:   Ensure amm installed
   aur:    user="{{ user }}" name=ammonite
+- name:   Ensure clojure installed
+  pacman: state=present     name=clojure
 - name:   Ensure CLOC installed
   pacman: state=present     name=cloc
 - name:   Ensure Docker installed
@@ -27,10 +29,14 @@
   aur:    user="{{ user }}" name=micro
 - name:   Ensure neovim installed
   pacman: state=present     name=neovim
+- name:   Ensure PIP installed
+  pacman: state=present     name=python-pip
+- pacman: state=present     name=python2-pip
 - name:   Ensure SBT installed
   pacman: state=present     name=sbt
 - name:   Ensure RVM installed
-  shell:  "{{ playbook_dir }}/scripts/rvm-installer.sh"
+  shell:  "gpg2 --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3"
+- shell:  "{{ playbook_dir }}/scripts/rvm-installer.sh stable --auto-dotfiles"
 - name:   Ensure stack installed
   pacman: state=present     name=stack
 - name:   Ensure tmux installed
