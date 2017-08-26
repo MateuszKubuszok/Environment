@@ -60,6 +60,8 @@
   aur:    user="{{ user }}" name=pencil
 - name:   Ensure PgAdmin3 installed
   pacman: state=present     name=pgadmin3
+- name:   Ensure Rambox installed
+  aur:    user="{{ user }}" name=rambox-bin
 - name:   Ensure Spotify installed
   aur:    user="{{ user }}" name=spotify
 - aur:    user="{{ user }}" name=ffmpeg0.10

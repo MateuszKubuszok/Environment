@@ -13,6 +13,7 @@
   pacman: state=present     name=emacs
 - name:   Ensure Git installed
   pacman: state=present     name=git
+- pacman: state=present     name=git-repair
 - name:   Ensure Gradle installed
   pacman: state=present     name=gradle
 - name:   Ensure htop installed
