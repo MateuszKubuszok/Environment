@@ -1,6 +1,4 @@
 ---
-- name: Backup .ammonite
-  copy: src="/home/{{ user }}/.ammonite/predef.sc" dest="{{ playbook_dir }}/terminal_settings/ammonite/predef.sc"
 - name: Backup .bashrc
   copy: src="/home/{{ user }}/.bashrc" dest="{{ playbook_dir }}/terminal_settings/bashrc"
 - name: Backup .gitconfig

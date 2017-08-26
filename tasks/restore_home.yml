@@ -14,6 +14,8 @@
       - "--exclude=.ammonite"
       - "--exclude=.ansible"
       - "--exclude=.bashrc"
+      - "--exclude=.cache"
+      - "--exclude=.dropbox-dist"
       - "--exclude=.emacs.d"
       - "--exclude=.gitconfig"
       - "--exclude=.oh-my-zsh"
