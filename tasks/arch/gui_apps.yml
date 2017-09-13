@@ -69,7 +69,10 @@
 - name:   Ensure Source Code Pro installed
   pacman: state=present     name=adobe-source-code-pro-fonts
 - name:   Ensure Sublime Text 3 installed
-  aur:    user="{{ user }}" name=sublime-text-nightly
+  shell:  "{{ playbook_dir }}/scripts/add-sublime-text-arch-repo.sh"
+- pacman: state=present     name=sublime-text
+- name:   Ensure Typora installed
+  aur:    user="{{ user }}" name=typora
 - name:   Ensure Thunderbird installed
   pacman: state=present     name=thunderbird
 - name:   Ensure xarchiver installed
