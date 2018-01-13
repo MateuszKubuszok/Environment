@@ -1,2 +1,12 @@
 *.retry
+idea.sbt
 home_backup
+terminal_settings/sbt/0.13/plugins
+terminal_settings/sbt/0.13/target
+terminal_settings/sbt/0.13/templates
+terminal_settings/sbt/0.13/zinc
+terminal_settings/sbt/1.0/plugins
+terminal_settings/sbt/1.0/target
+terminal_settings/sbt/1.0/templates
+terminal_settings/sbt/1.0/zinc
+terminal_settings/sbt/preloaded

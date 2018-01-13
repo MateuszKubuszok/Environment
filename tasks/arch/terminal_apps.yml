@@ -21,13 +21,10 @@
 - name:   Ensure JDK8 installed
   pacman: state=present     name=jdk8-openjdk
 - shell:  "archlinux-java set java-8-openjdk"
-- name:   Ensure matterhorn installed
-  aur:    user="{{ user }}" name=libtinfo
-- aur:    user="{{ user }}" name=matterhorn
 - name:   Ensure midnight commander installed
   pacman: state=present     name=mc
 - name:   Ensure micro installed
-  aur:    user="{{ user }}" name=micro
+  pacman: state=present     name=micro-bin
 - name:   Ensure neovim installed
   pacman: state=present     name=neovim
 - name:   Ensure PIP installed
