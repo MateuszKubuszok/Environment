@@ -3,14 +3,11 @@
   pacman: state=present     name=alacarte
 - name:   Ensure Alacritty installed
   aur:    user="{{ user }}" name=alacritty-git
-- name:   Ensure Android Studio installed
-  aur:    user="{{ user }}" name=android-studio
-- name:   Ensure Aptana Studio installed
-  aur:    user="{{ user }}" name=aptana-studio
 - name:   Ensure Aspell PL dict installed installed
   pacman: state=present     name=aspell-pl
 - name:   Ensure Arc theme installed
-  aur:    user="{{ user }}" name=gtk-theme-arc-git
+  pacman: state="present"   name=arc-gtk-theme
+- pacman: state="present"   name=arc-kde
 - name:   Ensure Chrome installed
   aur:    user="{{ user }}" name=google-chrome
 - pacman: state=present     name=chrome-gnome-shell
@@ -28,8 +25,6 @@
   pacman: state=present     name=ttf-freefont
 - pacman: state=present     name=ttf-arphic-uming
 - pacman: state=present     name=ttf-baekmuk
-- name:   Ensure Franz installed
-  aur:    user="{{ user }}" name=franz-bin
 - name:   Ensure Fira Code installed
   aur:    user="{{ user }}" name=fira-code-git
 - name:   Ensure Firefox installed
@@ -51,15 +46,17 @@
 - name:   Ensure KeePass installed
   pacman: state=present     name=keepass
 - aur:    user="{{ user }}" name=keepass-plugin-http
-- name:   Ensure Nylas Mail installed
-  aur:    user="{{ user }}" name=nylas-mail-bin
+- name:   Ensure Krita installed
+  pacman: state=present     name=krita
+- name:   Ensure MailSpring installed
+  aur:    user="{{ user }}" name=mailspring
 - name:   Ensure Paper theme installed
   aur:    user="{{ user }}" name=paper-gtk-theme-git
 - aur:    user="{{ user }}" name=paper-icon-theme-git
 - name:   Ensure Pencil installed
   aur:    user="{{ user }}" name=pencil
-- name:   Ensure PgAdmin3 installed
-  pacman: state=present     name=pgadmin3
+- name:   Ensure PgAdmin4 installed
+  pacman: state=present     name=pgadmin4
 - name:   Ensure Rambox installed
   aur:    user="{{ user }}" name=rambox-bin
 - name:   Ensure Spotify installed
@@ -73,8 +70,6 @@
 - pacman: state=present     name=sublime-text
 - name:   Ensure Typora installed
   aur:    user="{{ user }}" name=typora
-- name:   Ensure Thunderbird installed
-  pacman: state=present     name=thunderbird
 - name:   Ensure xarchiver installed
   pacman: state=present     name=xarchiver
 - name:   Ensure xeros drivers installed
